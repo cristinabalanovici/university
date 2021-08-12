@@ -1,0 +1,73 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.stil1 {color:red;background:blue}
+.stil2 {color:green;border:2px solid red}
+</style>
+<script>
+
+function s2(parag)
+{
+parag.className="stil2"
+}
+function s1(parag)
+{
+parag.className="stil1"
+}
+
+function s3(parag)
+{
+parag.style.cssText="color:yellow;position:relative;left:300px;top:300px"
+}
+
+function s4(parag)
+{
+parag.style.color=""
+parag.style.position=""
+}
+
+function comutaviz()
+{
+dv=document.getElementById("inv")
+if (dv.style.display=="none")
+	dv.style.display="block"
+else
+	dv.style.display="none"
+}
+
+function comutamod(d)
+{
+if (d.style.display=="block")
+	d.style.display="inline"
+else
+	d.style.display="block"
+}
+
+function comutafont(sp)
+{
+	sp.style.fontSize="48px"
+}
+
+function p1(imagine)
+{
+imagine.style.opacity=0.4
+imagine.filters.alpha.opacity=40
+}
+function p2(imagine)
+{
+imagine.style.opacity=1
+imagine.filters.alpha.opacity=100
+}
+</script>
+</head>
+
+<body>
+<p class="stil1" onmouseover="s2(this)" onmouseout="s1(this)" onclick="s3(this)" oncontextmenu="s4(this)">Acesta e un paragraf</p>
+<input type="button" value="apasa aici pt a comuta vizibilitatea" onclick="comutaviz()"/>
+<div id="inv" style="display:none;color:red" onclick="comutamod(this)">Acesta DIV a devenit vizibil. Click pe el pt a-i trece din afisare tip DIV in SPAN si invers</div>
+<span onclick="comutafont(this)">Acesta e un text care isi va schimba marimea fontului</span><br/>
+<img src="https://img.webmd.com/dtmcms/live/webmd/consumer_assets/site_images/article_thumbnails/slideshows/is_my_cat_normal_slideshow/1800x1200_is_my_cat_normal_slideshow.jpg" style="opacity:1;filter:alpha(opacity=100)" height="200" width="200" onmouseover="p1(this)" onmouseout="p2(this)"/>
+</body>
+</html>
