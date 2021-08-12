@@ -1,0 +1,44 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+
+function initializare()
+{
+m1=document.getElementById("mesaj1")
+erori=true
+}
+function verifica(camp)
+{
+if (camp.value=="")
+	{
+	m1.innerHTML="nu lasa necompletat campul"
+	camp.style.cssText="border:2px solid red"
+	erori=true
+	}
+else
+	{
+	m1.innerHTML=""
+	camp.style.cssText=""
+	erori=false
+	}
+}
+function verificaformular()
+{
+if (erori)
+	{
+	alert('exista erori in formular')
+	return false
+	}
+}
+</script>
+</head>
+<body onload="initializare()">
+<form action="destinatie.php" onsubmit="return verificaformular()">
+Camp obligatoriu:<input type="text" onblur="verifica(this)"/><span id="mesaj1"></span><br/>
+Camp optional:<input type="text" /><br/>
+<input type="submit" />
+</form>
+</body>
+</html>
