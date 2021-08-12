@@ -1,0 +1,41 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+
+function initializare()
+{
+campobl=document.getElementById("obl")
+m1=document.getElementById("mesaj1")
+}
+
+function verifica(valoare)
+{
+if (valoare=="")
+	{
+	m1.innerHTML="nu lasa necompletat campul"
+	campobl.style.cssText="border:2px solid red"
+	setTimeout(focalizeaza,1)
+	}
+else
+	{
+	m1.innerHTML=""
+	campobl.style.cssText=""
+	}
+}
+
+function focalizeaza()
+{
+campobl.focus()
+}
+</script>
+</head>
+<body onload="initializare()">
+<form action="destinatie.php">
+Camp obligatoriu:<input type="text" id="obl" onblur="verifica(this.value)"/><span id="mesaj1"></span><br/>
+Camp optional:<input type="text" /><br/>
+<input type="submit" />
+</form>
+</body>
+</html>
