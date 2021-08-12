@@ -1,0 +1,73 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+
+function initializare()
+{
+parag=document.getElementById("p1")
+txt=document.getElementById("i1")
+legatura=document.getElementById("leg1")
+}
+
+function dr()
+{
+parag.align="right"
+}
+function st()
+{
+parag.align="left"
+}
+function centru()
+{
+parag.align="center"
+}
+
+function converteste()
+{
+if (txt.type=="text")
+	txt.type="checkbox"
+else
+	txt.type="text"
+}
+
+function valoare()
+{
+if (txt.type=="text")
+	txt.value="AAAAAAA"
+else
+	txt.checked="checked"
+}
+
+function destinatielink()
+{
+legatura.href="http://www.yahoo.com"
+legatura.innerHTML="Acum linkul merge la yahoo!"
+}
+
+function p1(imagine)
+{
+imagine.src="poza2.jpg"
+}
+function p2(imagine)
+{
+imagine.src="poza1.jpg"
+}
+
+</script>
+</head>
+
+<body onload="initializare()">
+<input type="button" value="aliniaza dreapta" onclick="dr()"/><br/>
+<input type="button" value="aliniaza centru" onclick="centru()"/><br/>
+<input type="button" value="aliniaza stanga" onclick="st()"/><br/>
+<p id="p1">Acesta e un paragraf</p>
+<input type="button" value="converteste input" ondblclick="converteste()"/><br/>
+<input type="button" value="seteaza valoare" ondblclick="valoare()"/><br/>
+<input id="i1" type="text"/><br/>
+<p onclick="destinatielink()">Click aici pt a modifica destinatia linkului de mai jos</p><br/>
+<a id="leg1" href="http://www.google.com">Click aici pt a sari la google</a><br/>
+<img src="poza1.jpg" height="100" width="100" onmouseover="p1(this)" onmouseout="p2(this)"/>
+</body>
+</html>
