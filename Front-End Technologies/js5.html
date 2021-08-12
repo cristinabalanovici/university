@@ -1,0 +1,65 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+
+
+function initializare()
+{
+campuri=document.getElementsByTagName("input")
+radio=document.getElementsByName("v")
+formular=document.getElementById("f")
+i=0
+j=0
+k=0
+}
+
+function sari()
+{
+campuri[i].focus()
+i++
+if (i==campuri.length)
+	i=0
+}
+
+function bifeaza()
+{
+radio[j].click()
+j++
+if (j==radio.length)
+	j=0
+}
+
+function selecteaza()
+{
+campuri[k].select()
+k++
+if (k==campuri.length)
+	k=0
+}
+
+function trimite()
+{
+formular.submit()
+}
+</script>
+</head>
+<body onload="initializare()">
+
+<form id="f" action="destinatie.php">
+Nume:<input type="text" name="i1"/><br/>
+Prenume:<input type="text" name="i2"/><br/>
+Adresa:<input type="text" name="i3"/><br/>
+Interval varsta:<br/>
+sub 18 -<input type="radio" name="v"/><br/>
+18-60 -<input type="radio" name="v"/><br/>
+peste 60 -<input type="radio" name="v"/><br/>
+</form>
+
+<span style="border:2px solid red" onclick="sari()"> Click aici pt a sari dintr-un camp in altul </span><br/>
+<span style="border:2px solid blue" onclick="trimite()"> Click aici pt a trimite formularul </span><br/>
+<span style="border:2px solid green" onclick="bifeaza()"> Click aici pt a bifa pe rand butoanele radio </span><br/>
+<span style="border:2px solid green" onclick="selecteaza()"> Click aici pt a selecta pe rand campurile </span><br/>
+</body>
+</html>
