@@ -1,0 +1,62 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+
+function initializare()
+{
+buton=document.getElementById("i1")
+buton.onclick=efect1
+
+parag1=document.getElementById("p1")
+parag1.onclick=schimbaefect
+
+tbox=document.getElementById("i2")
+tbox.onkeypress=anuleazaefect
+
+}
+
+function efect1()
+{
+alert('Aceasta este efectul original al butonului')
+}
+function efect2()
+{
+elemnou=document.createElement("div")
+elemnou=document.body.appendChild(elemnou)
+elemnou.style.cssText="margin:auto;width:300px;border:2px solid blue"
+elemnou.innerHTML="Acum mesajul apare aici; treceti cu mouseul ca sa dispara"
+elemnou.onmouseover=ascunde
+}
+
+
+function ascunde()
+{
+document.body.removeChild(elemnou)
+
+}
+
+function schimbaefect()
+{
+buton.onclick=efect2
+alert('Atentie, butonul si-a schimbat efectul!!!')
+}
+
+function anuleazaefect()
+{
+buton.onclick=null
+alert('De acum incolo butonul nu mai are efect!!')
+}
+
+
+</script>
+</head>
+
+<body onload="initializare()">
+<input id="i1" type="button" value="afiseaza mesaj"/><br/>
+<p id="p1">Click aici pt a modifica efectul butonului</p>
+<input id="i2" type="text"/>
+
+</body>
+</html>
