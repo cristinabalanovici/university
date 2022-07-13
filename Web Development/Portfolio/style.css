@@ -1,0 +1,862 @@
+:root {
+    --background: rgb(25,27,36);
+    --accent: #1f2833;
+    --text: #c5c6c7;
+    --element: #66fcf1;
+    --secondary-text: #45a29e;
+}
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+body {
+    padding: 0;
+    margin: 0;
+    background: var(--background);
+    font-family: Lato, arial;
+}
+/* buton de toggle */
+#toggleBtn {
+    position: fixed;
+    z-index: 100;
+    transform: translate(-50%, -50%);
+    height:5vh;
+    width:5%;
+    right:0;
+    top:4%;
+}
+
+#toggleBtn span {
+    display:block;
+    width:60px;
+    height:3px;
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    transition: .5s;
+}
+
+#toggleBtn span:nth-child(1) {
+    transform: translate(-50%, -50%) translateY(-10px); 
+    transition: .2s;/* bara de sus */
+}
+
+#toggleBtn span:nth-child(4) {
+    transform: translate(-50%, -50%) translateY(10px);
+    transition: .2s; /* bara de jos */
+}
+
+#toggleBtn.active span:nth-child(1) {
+    transform: translate(-50%, -50%) translateY(-15px);
+    opacity:0;
+}
+
+#toggleBtn.active span:nth-child(4) {
+    transform: translate(-50%, -50%) translateY(15px);
+    opacity:0; /* barile se extind vertical, dupa care dispar */
+}
+
+#toggleBtn.active span:nth-child(2) {
+    transform: translate(-50%, -50%) rotate(45deg);
+    transition-delay: .2s;
+}
+
+#toggleBtn.active span:nth-child(3) {
+    transform: translate(-50%, -50%) rotate(-45deg);
+    transition-delay: .2s;
+}
+/* Bara de progres */
+.progress {
+    position: fixed;
+    top:0;
+    height: 0.25vh;
+    z-index:100;
+    width:100%;
+    background: var(--accent);
+}
+
+.bar {
+    position: absolute;
+    height: 0.25vh;
+    z-index: 101;
+    width: 0%;
+    background: var(--secondary-text);
+}
+/* bara de navigare */
+header {
+    background-color:rgba(25,27,36,0.9);
+    text-align: center;
+    position: fixed;
+    width:100%;
+    height:7vh;
+    z-index: 99;
+    top:0.25vh;
+}
+#slowDiv {
+    display:none;
+}
+nav {
+    position: absolute;
+    text-align:right;
+    float:right;
+    right:0;
+    top:100%;
+    background: rgba(25,27,36,0.9);
+    width:100%;
+    transform: scale(1, 0);
+    transform-origin: top;
+    transition: transform 400ms ease-in-out;
+}
+
+nav ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+nav li {
+    margin-bottom: 2em;
+    margin-right: 1em;
+}
+
+nav a {
+    font-family: Lato, arial;
+    color: white;
+    text-decoration: none;
+    font-size:1.25rem;
+    text-transform: uppercase;
+    opacity:0;
+    transition: opacity 150ms ease-in-out;
+}
+
+
+nav.checked {
+    transform: scale(1,1); /* folosesc scale (1,0) pentru a ascunde bara de navigare iar aceasta va reveni la scale(1,1) in momentul in care butonul este apasat*/
+}
+
+nav.checked a {
+    opacity: 1;
+    transition: opacity 250ms ease-in-out 250ms;
+}
+
+
+#progress {
+    display: none;
+}
+
+.animated-arrow {
+    display: none;
+}
+/* prima sectiune*/
+
+#salut {
+    background: var(--background);
+}
+#salut, #about, #portofoliu, #contact {
+    position: relative;
+    width: 100vw;
+    height:100vh;
+}
+
+
+#cerc-continut {
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%, -50%);
+    text-align: center;
+    font-family: Lato;
+    margin:0;
+}
+
+h1 {
+    text-align: center;
+    font-size:12em;
+    font-family: Carattere, arial;
+    color:var(--element);
+}
+
+h2 {
+    width:100%;
+    font-size:3em;
+    color:var(--text);
+    position: absolute;
+    bottom:10%;
+}
+
+/* Sectiunea About */
+#about {
+    background-color:var(--accent);
+}
+
+h3, h4 {
+    text-align: center;
+    color: var(--text);
+    font-size: 2.25em;
+    position: relative;
+    padding-top:100px;
+}
+
+#detalii {
+    display: grid;
+    width:50%;
+    margin: auto 25%;
+    position:absolute;
+    grid-template-columns: 1fr 1fr;
+    grid-gap:0px;
+}
+
+.detalii-container {
+    width:100%;
+    height:4vh;
+    border-left:1px solid var(--background);
+    border-bottom: 1px solid var(--background);
+}
+
+.detalii-container:nth-child(odd) {
+    border-left: none;
+}
+
+.detalii-container:nth-child(7), .detalii-container:nth-child(8) {
+    border-bottom: none;
+}
+.detaliu {
+    float:right;
+    font-size: 0.85em;
+    color: var(--text);
+    padding-bottom:5px;
+}
+
+.nume-detaliu {
+    padding-bottom:5px;
+    font-size: 0.85em;
+    color: var(--secondary-text);
+}
+
+.descriere {
+    width: 100%;
+    position: absolute;
+    top:45%;
+}
+
+#ocupatie {
+    color: var(--secondary-text);
+    font-size: 1.25em;
+    text-align: center;
+}
+
+#ocupatie-detalii {
+    color: var(--text);
+    width:90%;
+    text-align: left;
+    margin: auto 5%;
+    line-height: 1.8;
+}
+
+#subtitle {
+    text-align: center;
+    font-size:1.25em;
+    position:absolute;
+    width:100%;
+    top:65%;
+    color: var(--secondary-text);
+}
+
+#progres-skill {
+    position: absolute;
+    top: 75%;
+    width:90%;
+    margin: auto 5%;
+    display:flex;
+    flex-direction: column;
+}
+.skill {
+    margin: 20px;
+}
+.nume-skill {
+    color:var(--text);
+}
+
+.meter {
+    height:5px;
+    position: relative;
+    background: var(--background);
+    overflow: hidden;
+}
+
+.meter span {
+    display: block;
+    height:100%;
+}
+
+.prog {
+    background-color: var(--secondary-text);
+}
+
+section p {
+    opacity: 0; transition: opacity 3s;
+}
+
+section.is-inview p {
+    opacity:1;
+}
+
+section.is-inview .prog{
+    animation: progressSkill;
+    -webkit-animation: progressSkill 3s ease-in-out;
+    -webkit-animation-fill-mode:both; 
+    -moz-animation: progressSkill 3s ease-in-out;
+    -moz-animation-fill-mode:both; 
+}
+
+@keyframes progressSkill {
+    0% {
+        width:0%;
+    }
+
+    100% {
+        width:100%;
+    }
+}
+
+@-webkit-keyframes progressSkill {
+    0% {
+        width:0%;
+    }
+
+    100% {
+        width:100%;
+    }
+}
+
+@-moz-keyframes progressSkill {
+    0% {
+        width:0%;
+    }
+
+    100% {
+        width:100%;
+    }
+}
+/* Sectiunea portofoliu */
+#portofoliu {
+    background-color: var(--background);
+    height:220vh;
+}
+#portofoliu-subtitlu {
+    font-size: 1.2em;
+    color: var(--secondary-text);
+    width:100%;
+    text-align: center;
+}
+
+#html-proiect, #css-proiect, #js-proiect {
+    display: none;
+}
+#proiecte {
+    position: absolute;
+    width:70%;
+    margin-top:100px;
+    left:15%;
+    display: flex;
+    flex-direction: column;
+    padding:20px;
+}
+.proiect {
+    height:40vh;
+    width:100%;
+    text-align: center;
+    margin: 20px;
+}
+
+.link-proiect {
+    text-decoration: none;
+    font-size: 1.2em;
+    color: var(--secondary-text);
+}
+.container {
+    width:100%;
+    height:100%;
+    background:var(--background);
+    box-shadow: 10px 5px 5px var(--background);
+}
+
+.container .box {
+    width:100%;
+    display: block;
+    height:80%;
+    background-position: top;
+    transition: ease-in-out 8s;
+}
+
+.container .box.proiect1 {
+    background: url('img/color-picker.png');
+    background-size: cover;
+}
+
+.container .box.proiect2 {
+    background: url('img/landing-page.png');
+    background-size: cover;
+}
+
+.container .box.proiect3 {
+    background: url('img/tribute.png');
+    background-size: cover;
+}
+
+.container .box.proiect4 {
+    background: url('img/documentation.png');
+    background-size: cover;
+}
+.container .box:hover {
+    background-position: bottom;
+}
+
+.descriere-proiect {
+    width:100%;
+    color:var(--secondary-text);
+    position:relative;
+}
+/* Sectiunea de contact */
+#contact {
+    background-color: var(--accent);
+}
+
+#contact-header {
+    color: var(--text);
+    text-align: center;
+    position: absolute;
+    font-size: 2rem;
+    width:100%;
+    letter-spacing: 17px;
+    top:10%;
+    text-transform: uppercase;
+}
+
+#contactform {
+    position: absolute;
+    width: 50%;
+    top: 40%;
+    left: 25%;
+}
+
+input {
+    display:block;
+    font-size:0.85rem;
+    width: 100%;
+    height: 3em;
+    padding: 0px 15px;
+    background:transparent;
+    outline: none;
+    color: var(--text);
+    border: solid 1px var(--secondary-text);
+    border-bottom: none;
+    transition: .3s ease-in-out;
+}
+
+textarea {
+    font-size: 0.85rem;
+    width: 100%;
+    height:15em;
+    padding: 15px;
+    background:transparent;
+    outline: none;
+    color: var(--text);
+    border:solid 1px var(--secondary-text);
+    transition: .3s ease-in-out;
+}
+
+#submit {
+    border: solid 1px var(--secondary-text);
+    background: var(--secondary-text);
+    color: var(--text);
+    font-size: 0.85rem;
+    font-weight: bold;
+}
+
+input::placeholder, textarea::placeholder {
+    color:var(--text);
+}
+input:hover, textarea:hover {
+    background:var(--secondary-text);
+}
+
+/* Link-uri sociale */
+
+#social-links {
+    width:100%;
+    position:absolute;
+    bottom:0;
+    display:flex;
+}
+
+#github, #linkedin, #phone {
+    width:33.33%;
+    text-align: center;
+}
+
+.social {
+    text-decoration: none;
+    color:var(--text);
+}
+.fa {
+    color: var(--secondary-text);
+}
+/* Styling pentru ecrane mari */
+@media screen and (min-width: 800px) {
+    /* Scroll orizontal */
+    html, body {
+        width: 100%;
+        height:100%;
+        margin: 0;
+    }
+    body {
+        overflow: hidden; /* ascund bara de scroll implicita */
+    }
+
+    .wrapper {
+        width:400vw;
+        height:99.75vh;
+        margin-top:0.25vh;
+        white-space: nowrap;
+        
+    }
+
+    .wrapper section {
+        display: inline-block;
+        width: 100vw;
+        height:100vh;
+        white-space: normal;
+        scrollbar-width: none;
+    }
+    /* Navbar */
+    #toggleBtn {
+        display: none;
+    }
+    header {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+    }
+
+    nav {
+        all: unset;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        margin-right:5%;
+    }
+
+    nav ul {
+        display: flex;
+    }
+
+    nav li {
+        margin-left: 3em;
+        margin-bottom: 0;
+      }
+
+    nav a {
+        opacity: 1;
+        position: relative;
+        font-size:1em;
+        letter-spacing: 2px;
+    }
+    ul li a::after {
+        content: '';
+        position: absolute;
+        left: 0px;
+        bottom: -3px;
+        width: 100%;
+        height: 2px;
+        background-color: var(--secondary-text);
+        transform-origin: bottom right;
+        transition: transform 0.5s ease;
+        transform: scaleX(0);
+    }
+    ul a:hover::after {
+        transform-origin: bottom left;
+        transform: scaleX(1);
+    }
+    /*sectiunile*/
+    #salut, #about, #portofoliu, #contact {
+        position: absolute;
+    }
+
+    #about {
+        left:150vw;
+    }
+
+    #portofoliu {
+        left:250vw;
+    }
+
+    #contact {
+        left:500vw;
+        background: var(--background);
+    }
+
+    #contact-form {
+        width: 50%;
+        margin: auto 25%;
+    }
+
+      /*Sectiunea about */
+
+      #slowDiv {
+          width:70vw;
+          height:120vh;
+          position:absolute;
+          display:inline-block;
+        left:100vw;
+          background:url('img/coffee-and-laptop.jpg');
+          background-size:cover;
+          background-repeat: no-repeat;
+          background-position: center;
+          filter:grayscale(80%);
+      }
+
+      /* sectiunea portofoliu */
+
+      section.is-inview #portofoliu-wrapper {
+          position: sticky;
+          z-index:2;
+          overflow:auto;
+          left:0;
+      }
+
+      #portofoliu {
+          display: flex;
+          width:250vw;
+      }
+
+      #portofoliu-wrapper {
+          width:45vw;
+          height:100vh;
+          background: var(--background);
+      }
+
+      #portofoliu-limbaje p{
+        font-size: 4em;
+        display:block;
+        font-family: Carattere, arial;
+        color: var(--secondary-text);
+        -webkit-text-fill-color: transparent; /* Will override color (regardless of order) */
+        -webkit-text-stroke-width: 1px;
+        -webkit-text-stroke-color: var(--secondary-text);
+        transition: color 3000ms ease;
+      }
+
+      #portofoliu-slide {
+          width:205vw;
+          height:100vh;
+          position: absolute;
+          background:var(--accent);
+          left:45vw;
+      }
+
+      #portofoliu-limbaje {
+          position: absolute;
+          top:50%;
+          width:70%;
+          height: 60%;
+          top:40%;
+          margin: auto 15%;
+          text-align: center;
+      }
+
+      #html-proj, #css-proj, #js-proj {
+          height: 100vh;
+          position: absolute;
+          display: inline-block;
+      }
+
+      #html-proj {
+          width:40vw;
+      }
+
+      #css-proj {
+          left: 40vw;
+          width: 80vw;
+      }
+
+      #js-proj {
+          width:40vw;
+          left: 120vw;
+      }
+      #html-proiect.active-text, #css-proiect.active-text, #js-proiect.active-text {
+          color:var(--secondary-text);
+          -webkit-text-fill-color: var(--secondary-text); /* Will override color (regardless of order) */
+          -webkit-text-stroke-width: 1px;
+          -webkit-text-stroke-color: var(--secondary-text);
+      }
+
+      #proiecte {
+          display: flex;
+          position:absolute;
+          width:160vw;
+          height:100vh;
+          grid-template-columns: none;
+          grid-column-gap:0;
+          grid-row-gap: 0;
+      }
+
+      .proiect {
+          height: 50vh;
+          top:25vh;
+          position: absolute;
+          width:25vw;
+      }
+
+      .proiect:nth-child(2) {
+          left: 40vw;
+      }
+
+      .proiect:nth-child(3) {
+        left: 80vw;
+    }
+
+    .proiect:nth-child(4) {
+        left: 120vw;
+    }
+
+    .descriere-proiect {
+        font-size:1.25em;
+    }
+      /* Sageata de scroll */
+    .the-arrow {
+        width: 1px;
+        transition: all 0.2s;
+      }
+      .the-arrow.-left {
+        position: absolute;
+        top: 60%;
+        left: 0;
+      }
+      .the-arrow.-left > .shaft {
+        width: 0;
+        background-color: var(--secondary-text);
+      }
+      .the-arrow.-left > .shaft:before, .the-arrow.-left > .shaft:after {
+        width: 0;
+        background-color: var(--secondary-text);
+      }
+      .the-arrow.-left > .shaft:before {
+        transform: rotate(0);
+      }
+      .the-arrow.-left > .shaft:after {
+        transform: rotate(0);
+      }
+      .the-arrow.-right {
+        top: 3px;
+      }
+      .the-arrow.-right > .shaft {
+        width: 1px;
+        transition-delay: 0.2s;
+      }
+      .the-arrow.-right > .shaft:before, .the-arrow.-right > .shaft:after {
+        width: 8px;
+        transition-delay: 0.3s;
+        transition: all 0.5s;
+      }
+      .the-arrow.-right > .shaft:before {
+        transform: rotate(40deg);
+      }
+      .the-arrow.-right > .shaft:after {
+        transform: rotate(-40deg);
+      }
+      .the-arrow > .shaft {
+        background-color: var(--secondary-text);
+        display: block;
+        height: 1px;
+        position: relative;
+        transition: all 0.2s;
+        transition-delay: 0;
+        will-change: transform;
+      }
+      .the-arrow > .shaft:before, .the-arrow > .shaft:after {
+        background-color: var(--secondary-text);
+        content: "";
+        display: block;
+        height: 1px;
+        position: absolute;
+        top: 0;
+        right: 0;
+        transition: all 0.2s;
+        transition-delay: 0;
+      }
+      .the-arrow > .shaft:before {
+        transform-origin: top right;
+      }
+      .the-arrow > .shaft:after {
+        transform-origin: bottom right;
+      }
+      
+      .animated-arrow {
+        display: inline-block;
+        color: var(--text);
+        font-size: 1.25em;
+        font-style: italic;
+        text-decoration: none;
+        position: absolute;
+        right:4%;
+        bottom:50%;
+        transition: all 0.2s;
+      }
+      .animated-arrow:hover {
+        color: var(--secondary-text);
+      }
+      .animated-arrow:hover > .the-arrow.-left > .shaft {
+        width: 64px;
+        transition-delay: 0.1s;
+        background-color: var(--secondary-text);
+      }
+      .animated-arrow:hover > .the-arrow.-left > .shaft:before, .animated-arrow:hover > .the-arrow.-left > .shaft:after {
+        width: 8px;
+        transition-delay: 0.1s;
+        background-color: var(--secondary-text);
+      }
+      .animated-arrow:hover > .the-arrow.-left > .shaft:before {
+        transform: rotate(40deg);
+      }
+      .animated-arrow:hover > .the-arrow.-left > .shaft:after {
+        transform: rotate(-40deg);
+      }
+      .animated-arrow:hover > .main {
+        transform: translateX(17px);
+        transform: translateX(80px);
+      }
+      .animated-arrow:hover > .main > .the-arrow.-right > .shaft {
+        width: 0;
+        transform: translateX(200%);
+        transition-delay: 0;
+      }
+      .animated-arrow:hover > .main > .the-arrow.-right > .shaft:before, .animated-arrow:hover > .main > .the-arrow.-right > .shaft:after {
+        width: 0;
+        transition-delay: 0;
+        transition: all 0.1s;
+      }
+      .animated-arrow:hover > .main > .the-arrow.-right > .shaft:before {
+        transform: rotate(0);
+      }
+      .animated-arrow:hover > .main > .the-arrow.-right > .shaft:after {
+        transform: rotate(0);
+      }
+      .animated-arrow > .main {
+        display: flex;
+        align-items: center;
+        transition: all 0.2s;
+      }
+      .animated-arrow > .main > .text {
+        margin: 0 16px 0 0;
+        line-height: 1;
+      }
+      .animated-arrow > .main > .the-arrow {
+        position: relative;
+      }
+}
