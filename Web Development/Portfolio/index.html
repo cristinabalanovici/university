@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+    <head>
+        <title>Portofoliu</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <link href='http://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
+        <link href="https://fonts.googleapis.com/css2?family=Carattere&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <meta content="width=device-width, initial-scale=1" name="viewport" />
+        <script>
+            function toggleNav() {
+                var x=document.getElementsByTagName('header');
+                if (x.style.display === "block") {
+                    x.style.display ="none";
+                }
+                else {
+                    x.style.display="block";
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <div class="progress">
+            <div class="bar" id="progressBar"></div>
+          </div>
+        <!--Buton de toggle-->
+        <div id="toggleBtn">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <!--Bara de navigare-->
+        <header id="header">
+            <nav id="navbar">
+                <ul>
+                    <li><a href="#about">Despre mine</a></li>
+                    <li><a href="#portofoliu">Portofoliu</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+            
+        </header>
+        <!--Sectiunea de inceput-->
+            <div class="wrapper">
+                <section id="salut">
+                    <div id="cerc">
+                        <div id="cerc-continut">
+                            <h1>Salut!</h1>
+                            <h2>Sunt Cristina</h2>
+                        </div>
+                    </div>
+                    <!-- Sageata -->
+                    <a class='animated-arrow' href='#about'>
+                        <span class='the-arrow -left'>
+                          <span class='shaft'></span>
+                        </span>
+                        <span class='main'>
+                          <span class='text'>
+                            Scroll
+                          </span>
+                          <span class='the-arrow -right'>
+                            <span class='shaft'></span>
+                          </span>
+                        </span>
+                      </a>
+                </section>
+                <!--Prima poza-->
+                <!--About me-->
+                <div id="slowDiv">
+                </div>
+                <section id="about">
+                    <h3>Despre mine</h2>
+                    <div id="detalii" class="fade-in">
+                        <div class="detalii-container">
+                            <p class="nume-detaliu">Varsta</p>
+                        </div>
+                        <div class="detalii-container">
+                            <p class="detaliu">21</p>
+                        </div>
+                        <div class="detalii-container">
+                            <p class="nume-detaliu">Oras</p>
+                        </div>
+                        <div class="detalii-container">
+                            <p class="detaliu">Cluj-Napoca</p>
+                        </div>
+                        <div class="detalii-container">
+                            <p class="nume-detaliu">Facultate</p>
+                        </div>
+                        <div class="detalii-container">
+                            <p class="detaliu">FSEGA</p>
+                        </div>
+                        <div class="detalii-container">
+                            <p class="nume-detaliu">Specializare</p>
+                        </div>
+                        <div class="detalii-container">
+                            <p class="detaliu">Informatica Economica</p>
+                        </div>
+                    </div>
+                    <div class="descriere">
+                        <p id="ocupatie">Cu ce ma ocup?</p>
+                        <p id="ocupatie-detalii">Sunt studenta in anul 3 la Informatica Economica si iubesc ceea ce fac. Consider fiecare greseala o oportunitate noua de invatare si fiecare impas o incercare de perfectiune. Cel mai mult ma pasioneaza partea de Front-End.</p>
+                    </div>
+                    <div id="subtitle">
+                        <p>Cateva dintre competentele mele acumulate</p>
+                    </div>
+                    <div id="progres-skill">
+                        <div class="skill">
+                            <div class="nume-skill">HTML</div>
+                            <div class="meter">
+                                <span style="width:95%;"><span class="prog"></span></span>
+                            </div>
+                        </div>
+                        <div class="skill">
+                            <div class="nume-skill">CSS</div>
+                            <div class="meter">
+                                <span style="width:80%;"><span class="prog"></span></span>
+                            </div>
+                        </div>
+                        <div class="skill">
+                            <div class="nume-skill">Javascript</div>
+                            <div class="meter">
+                                <span style="width:50%;"><span class="prog"></span></span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!--Portofloiu-->
+                <section id="portofoliu">
+                    <div id="portofoliu-wrapper">
+                        <h4>Portfoliu</h3>
+                        <div id="portofoliu-subtitlu">Cateva proiecte realizate de mine</div>
+                        <div id="portofoliu-limbaje">
+                            <p id="html-proiect">HTML</p>
+                            <p id="css-proiect">CSS</p>
+                            <p id="js-proiect">Javascript</p>
+                        </div>
+                    </div>
+                    <div id="portofoliu-slide">
+                        <div id="proiecte">
+                            <div id="html-proj">
+                                <div class="proiect">
+                                    <div class="container">
+                                        <div class="box proiect4"></div>
+                                        <div class="descriere-proiect">
+                                            <a href="https://codepen.io/cristinabalanovici/full/dyOgYBE" class="link-proiect" target="_blank"><p>Documentation</p></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        <div id="css-proj">
+                            <div class="proiect">
+                                <div class="container">
+                                    <div class="box proiect2"></div>
+                                    <div class="descriere-proiect">
+                                        <a href="https://codepen.io/cristinabalanovici/pen/eYBLXbM" class="link-proiect" target="_blank"><p>Product Landing Page</p></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="proiect">
+                                <div class="container">
+                                    <div class="box proiect3"></div>
+                                    <div class="descriere-proiect">
+                                        <a href="https://codepen.io/cristinabalanovici/pen/abBwpNj" class="link-proiect" target="_blank"><p>Tribute page</p></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="js-proj">
+                            
+                            <div class="proiect">
+                                <div class="container">
+                                    <div class="box proiect1"></div>
+                                    <div class="descriere-proiect">
+                                        <a href="https://codepen.io/cristinabalanovici/pen/xxdmrgL" class="link-proiect" target="_blank"><p>Color Picker</p></a>
+                                    </div> 
+                                </div>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                </section>
+                <!--Contact-->
+                <section id="contact">
+                    <h5 id="contact-header">contact</h4>
+                    <form id="contactform" method="POST">
+                        <input name="Name" id="name" type="text" placeholder="NUME" required>
+                        <input name="Email" id="email" type="text" placeholder="E-MAIL" required>
+                        <textarea name="Message" id="mesaj" type="text" placeholder="MESAJ" required></textarea>
+                        <input id="submit" type="submit" value="TRIMITE">
+                    </form>
+                    <div id="social-links">
+                        <div id="github">
+                            <i class="fa fa-github"></i>
+                            <a class="social" href="https://github.com/cristinabalanovici" target="_blank"><p>cristinabalanovici</p></a>
+                        </div>
+                        <div id="linkedin">
+                            <i class="fa fa-linkedin"></i>
+                            <a class="social" href="https://www.linkedin.com/in/cristina-balanovici-027545203/" target="_blank"><p>cristina-balanovici</p></a>
+                        </div>
+                        <div id="phone">
+                            <i class="fa fa-phone"></i>
+                            <a class="social" href="tel:+40748140421"><p>+40748140421</p></a>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        <script src="script.js"></script>
+    </body>
+</html>
