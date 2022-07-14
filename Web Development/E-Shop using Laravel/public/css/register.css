@@ -1,0 +1,56 @@
+body {
+    background-image: url(../img/register.jpg);
+    background-size: cover;
+}
+.container {
+    position: relative;
+    width: 50%;
+    margin-left: 25%;
+    padding-top:200px;
+}
+
+.card {
+    width:50%;
+    margin-left: 25%;
+    background-color: var(--background);
+    padding: 15px;
+    border-radius: 5px;
+}
+
+.card-header {
+    font-size: 3em;
+    text-align: center;
+}
+
+.card-body {
+    margin-top: 2rem;
+}
+
+form label {
+    font-size: 1.2em;
+}
+
+form div {
+    padding:5px;
+}
+
+input[type="text"], input[type="email"], input[type="password"] {
+    height: 1.6em;
+    width:95%;
+    font-size: 1.5em;
+    padding:5px;
+}
+
+button {
+    font-size: 25px;
+    padding:5px;
+    width:30%;
+    margin-left:35%;
+}
+
+.btn-link {
+    text-decoration: none;
+    color: var(--secondarybkg);
+    margin-top: 5px;
+    font-size: 0.85rem;
+}
