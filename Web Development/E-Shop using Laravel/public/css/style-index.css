@@ -1,0 +1,197 @@
+header {
+    width:100%;
+    height: 100vh;
+    max-width: 100%;
+    display: flex;
+}
+
+#hero {
+    width:60%;
+    background-image: url(../img/hero5.jpg);
+    background-position: bottom;
+    background-size: cover;
+}
+
+#hero-text {
+    width:40%;
+    background-color: var(--background);
+    overflow: auto;
+}
+
+.title-container {
+    width:100%;
+    height:600px;
+    position: relative;
+}
+
+.title {
+    font-size: 3rem;
+    color: var(--text);
+    font-family: 'Major Mono Display', monospace;
+    font-style: italic;
+    position: relative;
+    margin-top:2rem;
+    font-weight: 400;
+    width:90%;
+    margin-left:10%;
+}
+
+#title-info {
+    width:80%;
+    position: relative;
+    margin: 6rem 0 0 10%;
+}
+
+#title-info p{
+    line-height: 3rem;
+    font-size:1.25rem;
+    color: var(--element);
+}
+
+#shop-now {
+    width:100%;
+    position: relative;
+    margin-top:6rem;
+    text-align: center;
+}
+
+
+h3 a {
+    text-decoration: none;
+    color: var(--text);
+    font-size: 2rem;
+}
+
+#arrow-right {
+    border: solid var(--text);
+    border-width: 0 4px 4px 0;
+    display: inline-block;
+    padding: 7.5px;
+    opacity: 0;
+    transform: rotate(-45deg);
+    transition: 350ms ease-in-out;
+}
+
+#why-us {
+    height: 30vh;
+    width:100%;
+    background: var(--text);
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    align-items: center;
+}
+
+#delivery, #customer-care, #quality {
+    flex: 1;
+    padding:3em;
+    text-align: center;
+    border-right: 1px solid var(--element);
+}
+
+.icon {
+    text-align: center;
+}
+
+.fa {
+    color: var(--background);
+}
+
+.why-us-desc p{
+    text-align: center;
+    color: var(--background);
+    padding-top: 30px;
+}
+
+#about-furniture {
+    display: flex;
+    width:100%;
+    height: 60vh;
+}
+
+#about-furniture-pic1, #about-furniture-pic2 {
+    width:30%;
+    background-size: cover;
+    background-position: bottom;
+}
+
+#about-furniture-text {
+    width: 40%;
+    padding: 3rem;
+    text-align: left;
+}
+
+#about-furniture-text h4 {
+    font-family: 'Major Mono Display', monospace;
+    font-size: 2rem;
+    font-style: italic;
+    padding-top: 10rem;
+}
+
+#about-furniture-text p {
+    font-size: 1.25rem;
+    padding-top: 2rem;
+    color: var(--element);
+    line-height: 2rem;
+}
+#about-furniture-pic1 {
+    background-image:url(../img/hero4.jpg);
+}
+
+#about-furniture-pic2 {
+    background-image:url(../img/furniture2.jpg);
+}
+
+#furniture-image {
+    width:100%;
+    height:40vh;
+    background-image:url(../img/hero1.jpg);
+    background-size:cover;
+    background-position: bottom;
+}
+footer {
+    width:100%;
+    height: 20vh;
+    display: flex;
+}
+#footer-container {
+    width:90%;
+    margin-left:10%;
+    height:20vh;
+    background-color:var(--background);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#footer-container p {
+    font-size: 1.35rem;
+    color: var(--text);
+}
+
+#footer-container ul {
+    list-style-type: none;
+    padding: 0.3rem;
+    width:50%;
+}
+
+#footer-container li {
+    font-size: 1.1rem;
+    padding:0.2rem;
+    color: var(--element);
+    transition: 150ms;
+    cursor: pointer;
+}
+
+#footer-container li:hover {
+    color: var(--text);
+}
+
+
+#shopping, #contact, #delivery-info {
+    width:33.33%;
+}
+
+@media screen and (min-width:800px) {
+    
+}
