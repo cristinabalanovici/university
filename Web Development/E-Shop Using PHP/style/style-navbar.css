@@ -1,0 +1,224 @@
+/*upper nav part*/
+#nav-container {
+    background: var(--background);
+    width: 100%;
+    position: fixed;
+    z-index: 999;
+    height: 80px;
+    text-align: center;
+}
+
+/*the navbar*/
+nav {
+    position: absolute;
+    text-align: left;
+    top:100%;
+    background: var(--background);
+    width:100%;
+    transform: scale(1, 0);
+    transform-origin: top;
+    transition: transform 400ms ease-in-out;
+    /*display: none;*/
+}
+
+#logo {
+    margin-top:20px;
+}
+
+#logo a{
+    color: var(--secondarybkg);
+    text-decoration: none;
+}
+
+nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+nav li {
+    margin-bottom: 1em;
+    margin-left: 1em;
+}
+
+nav a {
+    color: var(--effect);
+    text-decoration: none;
+    font-size:1.2rem;
+    text-transform: uppercase;
+    font-weight: 400;  
+    opacity: 0; 
+    transition: all 150ms ease-in-out;
+}
+
+nav a:hover {
+    font-size:1.3rem;
+}
+nav.checked {
+    transform: scale(1,1); /* folosesc scale (1,0) pentru a ascunde bara de navigare iar aceasta va reveni la scale(1,1) in momentul in care butonul este apasat*/
+}
+
+nav.checked a {
+    opacity: 1;
+    transition: opacity 250ms ease-in-out 250ms;
+}
+
+/*toggle button*/
+#toggleBtn {
+    position: fixed;
+    z-index: 100;
+    transform: translate(-50%, -50%);
+    height:5vh;
+    width:5%;
+    right:0;
+    top:40px;
+}
+
+#toggleBtn span {
+    display:block;
+    width:45px;
+    height:3px;
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    background: var(--background);
+    transition: .5s;
+}
+
+#toggleBtn span:nth-child(1) {
+    transform: translate(-50%, -50%) translateY(-10px); 
+    transition: .2s;/* upper bar */
+}
+
+#toggleBtn span:nth-child(4) {
+    transform: translate(-50%, -50%) translateY(10px);
+    transition: .2s; /* lower bar */
+}
+
+#toggleBtn.active span:nth-child(1) {
+    transform: translate(-50%, -50%) translateY(-15px);
+    opacity:0;
+}
+
+#toggleBtn.active span:nth-child(4) {
+    transform: translate(-50%, -50%) translateY(15px);
+    opacity:0; 
+}
+
+#toggleBtn.active span:nth-child(2) {
+    transform: translate(-50%, -50%) rotate(45deg);
+    transition-delay: .2s;
+}
+
+#toggleBtn.active span:nth-child(3) {
+    transform: translate(-50%, -50%) rotate(-45deg);
+    transition-delay: .2s;
+}
+
+#prod-nav {
+    height: 0%;
+    width: 100%;
+    max-width: 100%;
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    background-image: url('../img/menu.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    transition: 0.5s;
+    display: flex;
+    flex-direction: column;
+}
+
+
+#prod-nav a {
+    text-decoration: none;
+    color: black;
+    display: block;
+    transition: 0.3s;
+}
+
+.cat-container {
+    position: relative;
+    width:50%;
+    margin-left: 50%;
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.cat-container a {
+    margin-top: 2rem;
+    font-size: 2rem;
+    position:relative;
+}
+
+.cat-container a:hover {
+    font-size:2.5rem;
+}
+
+#closenav-container {
+    position: absolute;
+    text-align: right;
+    bottom: 2%;
+    right:2%;
+}
+
+#closenav-container span {
+    color: black;
+    font-size: 2rem;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+#closenav-container span:hover {
+    font-size:1.5rem;
+}
+
+.categories {
+    height:60%;
+    margin:10% 0 0 50%;
+    width:50%;
+    float:right;
+}
+
+@media screen and (min-width: 800px) {
+    #nav-container {
+        display: grid;
+        grid-template-columns: 1fr auto minmax(700px, 3fr) 1fr;
+    }
+
+    #logo {
+        grid-column: 1/3;
+    }
+
+    #toggleBtn {
+        display: none;
+    }
+
+    nav {
+        all: unset;
+        grid-column: 3/4;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        height: 80px;
+    }
+
+    nav ul {
+        display: flex;
+    }
+
+    nav li {
+        margin-left: 3em;
+        margin-bottom: 0;
+      }
+      
+    nav a{
+        opacity: 1;
+    }
+}
